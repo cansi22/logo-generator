@@ -29,7 +29,7 @@ A Python desktop application that takes a base logo (`logo.png`) and lets you ad
 2. **Create a virtual environment (recommended)**  
    ```bash
    python3 -m venv venv
-   source venv/bin/activate    # On Windows: venv\Scripts\activate
+   venv\Scripts\activate
    ```
 
 3. **Install dependencies**  
@@ -38,12 +38,12 @@ A Python desktop application that takes a base logo (`logo.png`) and lets you ad
    ```
 
 4. **Add your base logo**  
-   Place your `logo.png` file in the project root (next to `logo_app.py`).
+   Place your `logo.png` file in the project root (next to `generador_logo.py`).
 
 ## Usage
 
 ```bash
-python logo_app.py
+python generador_logo.py
 ```
 
 1. Enter your desired text in the text box.  
@@ -55,7 +55,7 @@ python logo_app.py
 
 ```
 logo-generator/
-├── logo_app.py        # Main application script
+├── generador_logo.py  # Main application script
 ├── logo.png           # Base logo image (replace with your own)
 ├── requirements.txt   # Python dependencies
 ├── LICENSE            # MIT License text
@@ -64,7 +64,7 @@ logo-generator/
 
 ## Customization
 
-- **Default Text Color**: Edit `self.text_color = "#273474"` in `logo_app.py`.  
+- **Default Text Color**: Edit `self.text_color = "#273474"` in `generador_logo.py`.  
 - **Font & Size**: Modify the `ImageFont.truetype("arial.ttf", 40)` call in `generar_imagen_con_texto()`.
 
 ## Packaging as Executable
@@ -73,7 +73,7 @@ To distribute without requiring Python installed on the user’s machine:
 
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --add-data "logo.png;." logo_app.py
+pyinstaller --onefile --add-data "logo.png;." generador_logo.py
 ```
 
 The standalone executable will be in the `dist/` folder.
